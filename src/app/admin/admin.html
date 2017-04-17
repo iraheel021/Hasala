@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default navbar-static-top">
+	<a class="navbar-brand navbar-right" ui-sref="admin.home">
+		<img src="assets/Hasala-nav-logo.png">
+	</a>
+	<ul class="nav navbar-nav">
+		<li>
+			<a class="f-l" ui-sref="admin.home" ui-sref-active="active"> Admin Panel </a>
+		</li>
+		<li>
+			<a class="f-l" href="#myHasalas"> My Hasalas </a>
+		</li>
+		<li>
+			<a class="f-l" ui-sref="admin.profile" ui-sref-active="active"> My Profile </a>
+		</li>
+	</ul>
+</nav>
+
+<div class="container-fluid main-container ">
+	<ui-view></ui-view>
+</div>

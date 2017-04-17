@@ -1,0 +1,9 @@
+dist/*
+!dist/.gitkeep
+/node_modules
+/bower_components
+.idea/*
+/.tmp
+npm-debug.log
+local-config.php
+.DS_Store

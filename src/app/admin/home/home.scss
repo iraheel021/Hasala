@@ -1,0 +1,94 @@
+.start-hasala-box {
+	margin: 55px 0;
+	.image {
+	    padding: 20px;
+    	text-align: center;
+    	background: #f0f0f0;
+	}
+}
+
+.update-section {
+	.row {
+		padding: 10px;
+		margin: 0;
+	}
+
+	.header {
+		background: #f8f8f8;
+
+		.hasala-list {
+			img {
+				width: 70px;
+				height: 65px;
+			}
+
+			select {
+				display: inline-block;
+			    margin-left: 20px;
+			    width: calc(100% - 90px);
+			}
+		}
+
+		.update-type {
+			margin-top: 20px;
+			
+			label {
+				font-size: 1.5rem;
+			}
+
+			.milestone-update {
+				position: relative;
+				select {
+					position: absolute;
+    				top: 35px;
+				}
+			}
+		}
+	}
+
+	.content {
+		padding: 20px 0px;
+
+		.update-title {
+			input {
+				display: inline-block;
+    			width: 46%;
+			}
+
+			input:last-child {
+				float: right;
+			}
+		}
+
+		#update-hasala-tabs {
+			.nav-tabs { 
+				border: none; 
+				a { margin: 0; }
+			}
+			.tab-content {
+				textarea {
+					resize: none;
+   					border-top-right-radius: 0;
+				}
+			}
+		}
+		.upload-image img {
+			cursor: pointer;
+			height: 154px;
+		}
+	}
+}
+
+.inline-image-field {
+	img {
+		width: 70px;
+		height: 65px;
+	}
+
+	:not(img) {
+		display: inline-block;
+	    margin-left: 20px;
+	    width: calc(100% - 90px);
+	}
+}
+

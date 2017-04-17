@@ -1,0 +1,143 @@
+<div class="row">
+	<div class="col-md-3 pull-left card">
+		<div class="card-header">
+			<h3 class="f-m">57357 Children Cancer Hospital</h3>
+		</div>
+		<div class="card-content">
+			<div class="two statistics small">
+				<div class="statistic">
+					<div class="value">0</div>
+					<div class="label">On Going</div>
+				</div>
+				<div class="statistic">
+					<div class="value">0</div>
+					<div class="label">Finished</div>
+				</div>
+			</div>
+			<div class="start-hasala-box">
+				<div class="image">
+					<img src="assets/start-hasala.png">
+				</div>
+				<button class="btn btn-primary n-r full-width" type="button">Start A New Hasala</button>
+			</div>
+			<p>
+				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+			</p>
+		</div>
+		<div class="card-footer">
+			<p>Active since 3 weeks</p>
+		</div>
+	</div>
+	<div class="col-md-9 pull-right">
+		<div class="four statistics card">
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/followers.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Followers</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/views.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Views</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/donors.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Donors</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/donations.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Total Donations</div>
+			</div>
+		</div>
+
+		<div class="update-section">
+			<h3>Let's Update the People!</h3>
+			<div class="card n-p">
+				<div class="row header">
+					<div class="col-md-5 pull-left inline-image-field">
+						<img class="img-circle" src="assets/hasala-placeholder.png">
+						<select class="form-control n-r">
+							<option value="" selected disabled>No Hasalas yet</option>
+							<option>Hasala 1</option>
+							<option>Hasala 2</option>
+							<option>Hasala 3</option>
+						</select>
+					</div>
+					<div class="col-md-4 update-type pull-right text-right">
+						<div class="radio-inline pull-left">
+							<label>
+								<input type="radio" name="updateType" value="regular" ng-model="update_type">Regular Update
+							</label>
+						</div>
+						<div class="milestone-update pull-right">
+							<div class="radio-inline">
+								<label>
+									<input type="radio" name="updateType" value="milestone" ng-model="update_type">Milestone Update
+								</label>
+							</div>
+							<select class="form-control n-r" ng-if="update_type=='milestone'">
+								<option value="" selected disabled>Select Milestone</option>
+								<option>Hasala 1</option>
+								<option>Hasala 2</option>
+								<option>Hasala 3</option>
+							</select>
+						</div>	
+					</div>
+				</div>
+				<div class="content">
+					<div class="row">
+						<div class="col-md-1">
+							<img src="assets/update-title.png">
+						</div>
+						<div class="col-md-9 update-title">
+							<input class="form-control" type="text" placeholder="Title">
+							<input class="form-control" type="text" placeholder="Arabic Title">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 pull-right upload-image">
+							<img src="assets/update-image.png">
+						</div>
+						<div class="col-md-9 pull-right">
+							<div id="update-hasala-tabs">
+							  <ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="pull-right">
+							    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">Arabic</a>
+							    </li>
+							    <li role="presentation" class="pull-right active">
+							    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
+							    </li>
+							  </ul>
+							  <div class="tab-content">
+							    <div role="tabpanel" class="tab-pane active" id="arabic-content">
+							    	<textarea class="form-control" rows="5" placeholder="Enter arabic brief update here ..."></textarea>
+							    </div>
+							    <div role="tabpanel" class="tab-pane" id="english-content">
+							    	<textarea class="form-control" rows="5" placeholder="Enter brief update here ..."></textarea>
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="my-hasalas" id="myHasalas">
+			<h3>All Hasalas</h3>
+			<div class="card">
+				
+			</div>
+		</div>
+	</div>
+</div>
