@@ -1,0 +1,148 @@
+<div class="row admin ngo">
+	<div class="col-md-3 pull-left">
+		<div class="card ngo-card">
+			<div class="banner">
+				<img src="assets/placeholder.png">
+				<div class="profile-image">
+					<div class="image">
+						<img src="assets/placeholder.png">
+						<a class="edit-icon">
+							<i class="fa fa-pencil"></i>
+						</a>
+					</div>
+				</div>
+				<a class="edit-icon">
+					<i class="fa fa-pencil"></i>
+				</a>
+			</div>
+			<div class="content">
+				<div class="header">
+					<h3> Short Description</h3>
+				</div>
+				<div class="description">
+					<p>
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</p>
+					<a class="start-hasala-box" ui-sref="admin.start">
+						<div class="image">
+							<img src="assets/start-hasala.png">
+						</div>
+						<button class="btn btn-primary n-r full-width" type="button">Start A New Hasala</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9 pull-right">
+		<div class="four statistics card">
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/followers.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Followers</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/views.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Views</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/donors.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Donors</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/donations.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Total Donations</div>
+			</div>
+		</div> 
+
+		<form name="ngoForm" ng-submit="ngoForm.$valid ? save(): ''">
+			<div class="card ngo-profile">
+				<div class="content">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="ngo-content {{content.type}}" ng-repeat="content in ngo.content">
+								<div ng-if="content.type=='title'" class="form-group header">
+									<input class="form-control {{!content.edit ? 'readonly' : ''}}" type="text" placeholder="NGO Name" required ng-model="content.data" ng-readonly="!content.edit">
+								</div>
+								<div ng-if="content.type=='text'" class="form-group">
+									<textarea class="form-control {{!content.edit ? 'readonly' : ''}}" placeholder="Description" rows="5" ng-model="content.data" ng-readonly="!content.edit"></textarea>	
+								</div>
+								<div ng-if="content.type=='image'">
+									<img src="{{content.data}}">
+								</div>
+								<div class="edit-icon" ng-if="!content.edit">
+									<div class="dropdown">
+									  	<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   		<i class="fa fa-pencil"></i>
+									  	</button>
+									  	<ul class="dropdown-menu">
+									    	<li><a ng-click="editContent($index)">Edit</a></li>
+									    	<li ng-if="content.type != 'title'"><a ng-click="deleteContent($index)">Delete</a></li>
+									  	</ul>
+									</div>
+								</div>
+							</div>
+							<div class="tools eng f-m">
+								<a class="add-photo" ng-click="addContent('image')">
+									<img src="assets/camera.png">
+									+ ADD PHOTO
+								</a>
+								<a class="add-text" ng-click="addContent('text')">
+									<img src="assets/des-eng.png">
+									+ ADD TEXT
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6 text-right">
+							<div class="ngo-content {{content.type}}" ng-repeat="content in ngo.content">
+								<div ng-if="content.type=='title'" class="form-group header">
+									<input class="form-control {{!content.edit ? 'readonly' : ''}}" type="text" placeholder="NGO Name" required ng-model="content.data" ng-readonly="!content.edit">
+								</div>
+								<div ng-if="content.type=='text'" class="form-group">
+									<textarea class="form-control {{!content.edit ? 'readonly' : ''}}" placeholder="Description" rows="5" ng-model="content.data" ng-readonly="!content.edit"></textarea>	
+								</div>
+								<div ng-if="content.type=='image'">
+									<img src="{{content.data}}">
+								</div>
+								<div class="edit-icon" ng-if="!content.edit">
+									<div class="dropdown">
+									  	<button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									   		<i class="fa fa-pencil"></i>
+									  	</button>
+									  	<ul class="dropdown-menu">
+									    	<li><a ng-click="editContent($index)">Edit</a></li>
+									    	<li ng-if="content.type != 'title'"><a ng-click="deleteContent($index)">Delete</a></li>
+									  	</ul>
+									</div>
+								</div>
+							</div>
+							<div class="tools arb f-m">
+								<a class="add-photo" ng-click="addContent('image')">
+									+ ADD PHOTO
+									<img src="assets/camera.png">
+								</a>
+								<a class="add-text" ng-click="addContent('text')">
+									+ ADD TEXT
+									<img src="assets/des-arb.png">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row text-center">
+				<button class="btn btn-primary btn-lg" type="submit">Save Changes</button>
+			</div>
+		</form>
+	</div>
+</div>

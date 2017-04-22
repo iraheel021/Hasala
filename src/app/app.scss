@@ -45,6 +45,7 @@ a {
     border-radius: 5px;
     font-family: roboto-medium;
 }
+
 .n-r {
 	border-radius: 0;	
 }
@@ -100,8 +101,14 @@ h2.primary {
 	border-radius: 3px;
 	padding: 0;
 	
-	.banner img {
-		width: 100%;
+	.banner {
+		position: relative;
+		img {
+			width: 100%;
+		}
+		.profile-image {
+			position: absolute;
+		}
 	}
 
 	.content {
@@ -165,4 +172,8 @@ h2.primary {
 	padding: 10px 12px;
     font-size: 1.8rem;
     height: auto;
+}
+
+textarea {
+	resize: none;
 }

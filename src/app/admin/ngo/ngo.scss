@@ -1,0 +1,91 @@
+.admin.ngo {
+	.card { margin-bottom: 20px; }
+
+	.ngo-card {
+		.banner {
+			.profile-image {
+				position: absolute;
+			    top: 59%;
+			    left: 0;
+			    right: 0;
+			    width: 150px;
+			    height: 150px;
+			    margin: auto;
+			    border: 1px solid gray;
+			    display: table;
+			    box-shadow: 0px 0px 4px 0px;
+
+			    .image { position: relative; }
+
+			    img { height: 100%; }
+			}
+
+			.edit-icon {
+				position: absolute;
+			    top: 0;
+			    right: 0;
+			    padding: 10px;
+			}
+		}
+		.content {
+			margin-top: 80px;
+		}
+	}
+
+	.ngo-profile {
+		padding: 30px;
+
+		.ngo-content {
+			margin-bottom: 20px;
+			position: relative;
+
+			.form-control.readonly {
+			    background: white;
+			    border: 0;
+			    box-shadow: none;
+			}
+
+			.edit-icon {
+			    position: absolute;
+			    top: 0px;
+			    right: 0px;
+
+			    button {
+			    	background: white;
+			    	border: 0;
+			    	box-shadow: none;
+			    }
+
+			    .dropdown-menu {
+			    	left: auto;
+			    	right: 0;
+			    }
+			}
+		}
+
+		.ngo-content.image {
+			img { width: 100%; }
+		}
+
+		.tools {
+			font-size: 1.6rem;
+			a {
+				text-decoration: none;
+			    color: black;
+			    margin: 12px 0;
+			    display: block;
+			}
+			.add-photo img { width: 40px; }
+			.add-text img { width: 50px; }
+		}
+
+		.tools.eng {
+			.add-photo img { margin-right: 26px; }
+			.add-text img { margin-right: 16px; }
+		}
+		.tools.arb {
+			.add-photo img { margin-left: 26px; }
+			.add-text img { margin-left: 16px; }
+		}
+	}
+}
