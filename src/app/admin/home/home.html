@@ -1,31 +1,36 @@
-<div class="row">
+<div class="row admin.home">
 	<div class="col-md-3 pull-left card">
-		<div class="card-header">
-			<h3 class="f-m">57357 Children Cancer Hospital</h3>
+		<div class="banner">
+			<img src="assets/placeholder.png">
 		</div>
-		<div class="card-content">
-			<div class="two statistics small">
-				<div class="statistic">
-					<div class="value">0</div>
-					<div class="label">On Going</div>
-				</div>
-				<div class="statistic">
-					<div class="value">0</div>
-					<div class="label">Finished</div>
-				</div>
+		<div class="content">
+			<div class="header">
+				<h3 class="f-m">57357 Children Cancer Hospital</h3>
 			</div>
-			<div class="start-hasala-box">
-				<div class="image">
-					<img src="assets/start-hasala.png">
+			<div class="description">
+				<div class="two statistics small">
+					<div class="statistic">
+						<div class="value">0</div>
+						<div class="label">On Going</div>
+					</div>
+					<div class="statistic">
+						<div class="value">0</div>
+						<div class="label">Finished</div>
+					</div>
 				</div>
-				<button class="btn btn-primary n-r full-width" type="button">Start A New Hasala</button>
+				<a class="start-hasala-box" ui-sref="admin.start">
+					<div class="image">
+						<img src="assets/start-hasala.png">
+					</div>
+					<button class="btn btn-primary n-r full-width" type="button">Start A New Hasala</button>
+				</a>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
 			</div>
-			<p>
-				Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-			</p>
 		</div>
-		<div class="card-footer">
-			<p>Active since 3 weeks</p>
+		<div class="extra-meta">
+			<span class="f-m">Active since 3 weeks</span>
 		</div>
 	</div>
 	<div class="col-md-9 pull-right">
@@ -65,7 +70,7 @@
 			<div class="card n-p">
 				<div class="row header">
 					<div class="col-md-5 pull-left inline-image-field">
-						<img class="img-circle" src="assets/hasala-placeholder.png">
+						<img class="img-circle" src="assets/placeholder.png">
 						<select class="form-control n-r">
 							<option value="" selected disabled>No Hasalas yet</option>
 							<option>Hasala 1</option>
@@ -134,9 +139,157 @@
 		</div>
 
 		<div class="my-hasalas" id="myHasalas">
-			<h3>All Hasalas</h3>
-			<div class="card">
-				
+			
+			<div id="all-hasalas-tabs">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="pull-left">
+						<h3>
+							<img src="assets/all-hasalas.png">
+							All Hasalas
+						</h3>
+					</li>
+				    <li role="presentation" class="pull-right {{hasala_tab == 'expired' ? 'active': ''}}">
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'expired'">Expired</a>
+				    </li>
+				    <li role="presentation" class="pull-right {{hasala_tab == 'finished' ? 'active': ''}}">
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'finished'">Finished</a>
+				    </li>
+				    <li role="presentation" class="pull-right {{hasala_tab == 'on-going' ? 'active': ''}}">
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'on-going'">On Going</a>
+				    </li>
+				    <li role="presentation" class="pull-right {{hasala_tab == 'needs-update' ? 'active': ''}}">
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'needs-update'">Needs Update</a>
+				    </li>
+				    <li role="presentation" class="pull-right {{hasala_tab == 'all-hasalas' ? 'active': ''}}">
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'all-hasalas'">All Hasalas</a>
+				    </li>
+				</ul>
+				<div class="card">
+					<div class="content">
+						<div class="row all-hasalas-nav">
+							<ul class="nav navbar-nav full-width">
+								<li>
+									<a class="f-l {{sub_cat == 'all' ? 'active' : ''}}" ng-click="sub_cat='all'"> All </a>
+								</li>
+								<li>
+									<a class="f-l {{sub_cat == 'health' ? 'active' : ''}}" ng-click="sub_cat='health'"> Health </a>
+								</li>
+								<li>
+									<a class="f-l {{sub_cat == 'water' ? 'active' : ''}}" ng-click="sub_cat='water'"> Water </a>
+								</li>
+								<li>
+									<a class="f-l {{sub_cat == 'orphans' ? 'active' : ''}}" ng-click="sub_cat='orphans'"> Orphans </a>
+								</li>
+								<li>
+									<a class="f-l {{sub_cat == 'education' ? 'active' : ''}}" ng-click="sub_cat='education'"> Education </a>
+								</li>
+								<div class="pull-right">
+									<a class="btn btn-primary n-r" ui-sref="admin.start">
+										<span class="pull-left">
+											<img src="add-hasala-btn.png">
+										</span>
+										Start A New Hasala
+									</a>
+								</div>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane active">
+								<a class="empty" ng-if="hasalas.length < 1" ui-sref="admin.start">
+									<img src="assets/all-hasalas-lg.png">
+						    		<div class="content">
+						    			<h4>You haven't started any hasalas yet!</h4>
+						    			<h2>Start a Hasala, start the change</h2>
+						    		</div>
+						    		<img class="img-circle" src="assets/add-hasala.png">
+								</a>
+								<div ng-if="hasalas.length > 0">
+									<div class="row">
+								    	<div ng-repeat="hasala in hasalas" class="col-md-4 card">
+								    		<div class="banner">
+								    			<img src="assets/placeholder.png">
+								    		</div>
+								    		<div class="content">
+									    		<div class="header">
+									    			<h4>{{hasala.title}}</h4>
+									    			<div class="meta">
+									    				<span>{{hasala.weeks_left}} weeks left | {{hasala.completed_milestones}}/{{hasala.total_milestones}} Milestones finished </span>
+									    			</div>
+									    		</div>
+									    		<div class="hasala-progress">
+										    		<div class="progress">
+													  	<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+													  	</div>
+													</div>
+													<span class="progress-text f-m"> 70% </span>
+										    	</div>
+									    		<div class="description">
+									    			<p>{{hasala.content}}</p>
+									    		</div>
+									    	</div>
+									    	<div class="extra-meta">
+								    			<span class="donations">
+								    				<img src="assets/donations.png">{{hasala.donations | number}} LE
+								    			</span>
+								    			<span class="pull-right">
+								    				<button type="button" class="btn btn-primary">Update Now</button>
+								    			</span>
+								    		</div>
+								    	</div>
+								    </div>
+								</div>
+							</div>
+						    <!-- <div role="tabpanel" class="tab-pane empty" id="expired">
+						    	expired
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="finished">
+						    	<div class="row">
+							    	<div ng-repeat="hasala in hasalas" class="col-md-4 card">
+							    		<div class="banner">
+							    			<img src="assets/placeholder.png">
+							    		</div>
+							    		<div class="content">
+								    		<div class="header">
+								    			<h4>{{hasala.title}}</h4>
+								    			<div class="meta">
+								    				<span>{{hasala.weeks_left}} weeks left | {{hasala.completed_milestones}}/{{hasala.total_milestones}} Milestones finished </span>
+								    			</div>
+								    		</div>
+								    		<div class="hasala-progress">
+									    		<div class="progress">
+												  	<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+												  	</div>
+												</div>
+												<span class="progress-text f-m"> 70% </span>
+									    	</div>
+								    		<div class="description">
+								    			<p>{{hasala.content}}</p>
+								    		</div>
+								    	</div>
+								    	<div class="extra-meta">
+							    			<span class="donations">
+							    				<img src="assets/donations.png">{{hasala.donations | number}} LE
+							    			</span>
+							    			<span class="pull-right">
+							    				<button type="button" class="btn btn-primary">Update Now</button>
+							    			</span>
+							    		</div>
+							    	</div>
+							    </div>
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="on-going">
+						    	On going
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="needs-update">
+						    	needs-update
+						    </div>
+						    <div role="tabpanel" class="tab-pane" id="all-hasalas">
+						    	all-hasalas
+						    </div> -->
+						</div>
+					</div>
+				  </div>
+				</div>
 			</div>
 		</div>
 	</div>

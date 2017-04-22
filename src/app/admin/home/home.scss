@@ -8,6 +8,7 @@
 }
 
 .update-section {
+	margin-top: 30px;
 	.row {
 		padding: 10px;
 		margin: 0;
@@ -61,10 +62,6 @@
 		}
 
 		#update-hasala-tabs {
-			.nav-tabs { 
-				border: none; 
-				a { margin: 0; }
-			}
 			.tab-content {
 				textarea {
 					resize: none;
@@ -76,6 +73,93 @@
 			cursor: pointer;
 			height: 154px;
 		}
+	}
+}
+
+.my-hasalas {
+	margin-top: 30px;
+	#all-hasalas-tabs {
+		h3 {
+			margin: 0;
+		    height: 100%;
+		    line-height: 1.5;
+		}
+	}	
+	.card {
+		
+	}
+
+	.all-hasalas-nav {
+		padding: 10px;
+		margin: 0;
+
+		ul li a, a:hover, a:focus {
+			padding: 4px 28px;
+			color: black;
+			font-weight: bold;
+			border-radius: 20px;
+			background: white;
+		}
+
+		ul li a.active {
+			border: 2px solid #92c510;
+			color: #92c510;
+		}
+	}
+	.tab-content {
+		padding: 10px 0;
+		min-height: 450px;
+		position: relative;
+
+		.row { margin: 0; }
+
+		.col-md-4 {
+			width: 31.333333%;
+			margin: 1% ;
+		}
+		.empty {
+			position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		    display: table;
+		    width: 100%;
+		    text-align: center;
+		    
+		    .content {
+		    	margin: 30px 0;
+
+		    	h2 { margin: 10px 0; }
+		    }
+		}
+	}
+
+	.hasala-progress {
+		position: relative;
+		.progress {
+			height: 10px;
+			width: 80%;
+
+			.progress-bar {
+				background: #92c510;
+			}
+		}
+		.progress-text {
+			position: absolute;
+		    top: -8px;
+		    color: #92c510;
+		    right: 0;
+		    font-family: roboto-medium;
+		}
+	}
+	
+	.donations {
+		font-size: 1.5rem;
+    	color: orange;
+
+		img { margin-right: 10px; }
 	}
 }
 
@@ -92,3 +176,9 @@
 	}
 }
 
+.nav-tabs { 
+	border: none; 
+	a { 
+		margin: 0 !important; 
+	}
+}

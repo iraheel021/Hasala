@@ -1,0 +1,157 @@
+.admin.start {
+	.card { margin-bottom: 20px; }
+
+	.card .content .header {
+		font-family: roboto-light;
+	}
+
+	label {
+		font-weight: normal;
+		font-size: 1.8rem;
+		margin-bottom: 8px; 
+		font-weight: bold;
+	}
+
+	.card.hasala-intro {
+		.banner {
+			position: relative;
+			
+			.upload {
+				margin: 0;
+				padding: 0 72px;
+				position: absolute;
+			    width: 100%;
+			    top: 30px;
+			    height: 280px;
+				
+				.upload-link {
+				    position: relative;
+	    			height: 100%;
+
+	    			h2 { color: #92c510; }
+	    			p { 
+	    				color: white;
+					    padding-left: 50px;
+					    font-size: 1.8rem;
+	    			}
+					img { width: auto; }
+
+					div { 
+						position: absolute;
+					    top: 0;
+					    bottom: 0;
+					    right: 0;
+					    left: 0;
+					    margin: auto;
+					    display: table;
+					}
+				}
+
+				.upload-image {
+					height: 100%;
+					img { height: 100%; }
+				}
+			}
+		}
+
+		.content {
+			.header {
+				margin: 0;
+    			padding: 30px 72px;
+    			background: #f8f8f8;
+
+			}
+
+			.description {
+				padding: 50px 72px;
+
+				.form-group.date {
+					label { display: block; }
+					
+					select {
+						width: 30%;
+						display: inline-block;
+					}
+
+					select:not(:last-child) {
+						margin-right: 4%;
+					}
+				}
+			}
+		}
+	}
+
+	.card.hasala-description {
+		padding: 20px 87px;
+
+		.header {
+
+			margin-bottom: 40px; 
+			.row > * {
+				display: inline-block;
+				width: auto;
+				vertical-align: middle;
+			}
+
+			div { padding: 0 20px; }
+		}
+
+		.description {
+			.tools {
+				font-size: 1.6rem;
+				a {
+					text-decoration: none;
+				    color: black;
+				    margin: 12px 0;
+				    display: block;
+				}
+				.add-photo img { width: 40px; }
+				.add-text img { width: 50px; }
+			}
+
+			.tools.eng {
+				.add-photo img { margin-right: 26px; }
+				.add-text img { margin-right: 16px; }
+			}
+			.tools.arb {
+				.add-photo img { margin-left: 26px; }
+				.add-text img { margin-left: 16px; }
+			}
+		}
+	}
+
+	.card.hasala-milestones {
+		padding: 20px 87px;
+		position: relative;
+
+		.header { 
+			margin-bottom: 40px; 
+			.row > * {
+				display: inline-block;
+				width: auto;
+				vertical-align: middle;
+			}
+
+			div { padding: 0 20px; }		
+		}
+
+		.description {
+			.milestone-target {
+				display: table;
+			    margin: 20px auto;
+			    line-height: 5rem;
+
+			    label, .currency {
+			    	font-size: 2rem;
+			    }
+
+			    .currency { color: orange; }
+			}
+
+			.add-milestone {
+				color: #92c510;
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
