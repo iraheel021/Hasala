@@ -1,0 +1,201 @@
+<div class="admin hasala row">
+	<div class="col-md-3 pull-left">
+		<div class="card hasala-card text-center">
+			<div class="content">
+				<div class="image">
+					<img src="assets/placeholder.png">
+				</div>
+				<div class="time-ago">Opened since 2 weeks ago</div>
+			</div>
+			<div class="countdown">
+				<div>
+					<img src="assets/clock-lg.png">
+				</div>	
+				<h3>Count Down</h3>
+				<timer end-time="1494746800000">
+					<div class="timer">
+						<div class="dynamic">
+							{{days}} 
+							<span class="pull-right">:</span>
+						</div>
+						<div class="text">Days</div>
+					</div>
+					<div class="timer">
+						<div class="dynamic">
+							{{hours}} 
+							<span class="pull-right">:</span>
+						</div>
+						<div class="text">Hours</div>
+					</div>
+					<div class="timer">
+						<div class="dynamic">
+							{{minutes}} 
+							<span class="pull-right">:</span>
+						</div>
+						<div class="text">Min</div>
+					</div>
+					<div class="timer">
+						<div class="dynamic">{{seconds}} </div>
+						<div class="text">Sec</div>
+					</div>
+				</timer>
+			</div>
+
+			<div class="target">
+				<h4>Target Donations</h4>
+				<img src="assets/donations-lg.png"> 20,000 LE
+			</div>
+
+			<div class="two statistics small">
+				<div class="statistic">
+					<div class="value">32</div>
+					<div class="label">Updates</div>
+				</div>
+				<div class="statistic">
+					<div class="value">2/5</div>
+					<div class="label">Milestones</div>
+				</div>
+			</div>
+			<div class="terminate">
+				<a>
+					<img src="assets/trash.png">
+					Terminate Hasala
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9 pull-right">
+		<div class="card hasala-description">
+			<div class="category">
+				<b>{{hasala.category}}</b>
+			</div>
+			<div class="content">
+				<div class="header">
+					<a class="edit-icon" ng-if="!title_edit" ng-click="toggle('title_edit')">
+						<img src="assets/pencil.png">
+					</a>
+					<div class="form-group">
+						<input class="form-control {{!title_edit ? 'readonly' : ''}}" type="text" placeholder="Hasala Title" required ng-model="hasala.title" ng-readonly="!title_edit">
+					</div>
+					<div class="hasala-meta">
+						<div class="countdown">Count Down: 340 days</div>
+						<div class="hasala-progress">
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+								</div>
+							</div>
+							<span class="progress-text f-m">70%</span>
+						</div>
+					</div>
+				</div>
+				<div class="description">
+					<div class="row">
+						<div class="col-md-9">
+							<p>{{hasala.description}}</p>
+						</div>
+						<div class="col-md-3">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="four statistics card">
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/followers.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Followers</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/share.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Shares</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/views.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Views</div>
+			</div>
+			<div class="statistic">
+				<div clas="image">
+					<img src="assets/donors.png">
+				</div>
+				<div class="value">0</div>
+				<div class="label">Donors</div>
+			</div>
+		</div> 
+
+		<div class="update-section">
+			<div class="card n-p">
+				<div class="row header">
+					<div class="col-md-5 pull-left">
+						<h3>Let's Update the People!</h3>
+					</div>
+					<div class="col-md-4 update-type pull-right text-right">
+						<div class="radio-inline pull-left">
+							<label>
+								<input type="radio" name="updateType" value="regular" ng-model="update_type">Regular Update
+							</label>
+						</div>
+						<div class="milestone-update pull-right">
+							<div class="radio-inline">
+								<label>
+									<input type="radio" name="updateType" value="milestone" ng-model="update_type">Milestone Update
+								</label>
+							</div>
+							<select class="form-control n-r" ng-if="update_type=='milestone'">
+								<option value="" selected disabled>Select Milestone</option>
+								<option>Hasala 1</option>
+								<option>Hasala 2</option>
+								<option>Hasala 3</option>
+							</select>
+						</div>	
+					</div>
+				</div>
+				<div class="content">
+					<div class="row">
+						<div class="col-md-1">
+							<img src="assets/update-title.png">
+						</div>
+						<div class="col-md-9 update-title">
+							<input class="form-control" type="text" placeholder="Title">
+							<input class="form-control" type="text" placeholder="Arabic Title">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 pull-right upload-image">
+							<img src="assets/update-image.png">
+						</div>
+						<div class="col-md-9 pull-right">
+							<div id="update-hasala-tabs">
+							  <ul class="nav nav-tabs" role="tablist">
+							    <li role="presentation" class="pull-right">
+							    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">Arabic</a>
+							    </li>
+							    <li role="presentation" class="pull-right active">
+							    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
+							    </li>
+							  </ul>
+							  <div class="tab-content">
+							    <div role="tabpanel" class="tab-pane active" id="arabic-content">
+							    	<textarea class="form-control" rows="5" placeholder="Enter arabic brief update here ..."></textarea>
+							    </div>
+							    <div role="tabpanel" class="tab-pane" id="english-content">
+							    	<textarea class="form-control" rows="5" placeholder="Enter brief update here ..."></textarea>
+							    </div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

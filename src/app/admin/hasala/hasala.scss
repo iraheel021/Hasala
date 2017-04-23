@@ -1,0 +1,133 @@
+.admin.hasala {
+	
+	.card {
+		margin-bottom: 20px;
+		.content {
+			padding: 40px;
+		}
+	}
+	.hasala-card {
+		background: #fbfafa;
+		.image {
+		 	img { width: 100%; }
+		}
+
+		.time-ago {
+			font-weight: bold;
+    		margin: 20px 0 0;
+		}
+
+		.countdown {
+			margin: 0 0 40px;
+
+			img { width: 30px; }
+			h3 { margin: 10px 0; }
+
+			timer { 
+				display: block; 
+				width: 100%; 
+				background: white; 
+			}
+
+			.timer {
+				display: inline-block;
+    			width: 20%;
+    			vertical-align: middle;	
+
+    			.dynamic {
+    				font-size: 3.5rem;
+    				color: #92c510;
+    			}
+			}
+		}
+
+		.target {
+			font-size: 3.5rem;
+		    padding: 10px 0;
+		    background: white;
+		}
+
+		.statistic .value {
+			color: orange;
+		}
+
+		.terminate {
+			margin: 20px 0;
+		    display: inline-block;
+		    width: 100%;
+		    font-size: 1.8rem;
+
+		    a {
+		    	color: red;
+    			text-decoration: none;
+		    }
+
+		    img { margin-right: 10px; }
+		}
+	}
+
+	.hasala-description {
+		position: relative;
+
+		.category {
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			color: #92c510;
+
+			b {
+				border: 2px solid;
+			    border-radius: 20px;
+			    padding: 6px 20px;
+			}
+		}
+
+		.header {
+			max-width: 500px;
+			position: relative;
+
+			.form-control.readonly {
+			    background: white;
+			    border: 0;
+			    box-shadow: none;
+			}
+			input {
+				font-size: 2.5rem;
+			}
+			.edit-icon {
+			    position: absolute;
+			    top: 15px;
+			    right: 0px;
+			    text-decoration: none;
+			}
+
+			.hasala-meta {
+				margin-left: 13px;
+
+				.countdown {
+					margin: 10px 0;
+				}
+				.hasala-progress {
+					position: relative;
+					
+					.progress {
+						height: 10px;
+						width: 80%;
+
+						.progress-bar {
+							background: #92c510;
+						}
+					}
+					.progress-text {
+						position: absolute;
+					    top: -8px;
+					    color: #92c510;
+					    right: 0;
+					    font-size: 2rem;
+					    font-family: roboto-medium;
+					}
+				}
+			}
+		}
+	}
+}
