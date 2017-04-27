@@ -1,5 +1,6 @@
 .start-hasala-box {
 	margin: 55px 0;
+	display: block;
 	.image {
 	    padding: 20px;
     	text-align: center;
@@ -172,12 +173,5 @@
 		display: inline-block;
 	    margin-left: 20px;
 	    width: calc(100% - 90px);
-	}
-}
-
-.nav-tabs { 
-	border: none; 
-	a { 
-		margin: 0 !important; 
 	}
 }

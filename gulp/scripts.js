@@ -41,6 +41,12 @@ gulp.task( 'bootstrap', function()
 		.pipe( gulp.dest( 'dist/bootstrap/' ) );
 } );
 
+gulp.task( 'bootstrap-rtl', function()
+{
+	return gulp.src( 'bower_components/bootstrap-rtl/**/*' )
+		.pipe( gulp.dest( 'dist/bootstrap-rtl/' ) );
+} );
+
 gulp.task( 'font-awesome', function()
 {
 	return gulp.src( 'bower_components/font-awesome/**/*' )

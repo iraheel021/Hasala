@@ -1,9 +1,9 @@
 <div class="admin hasala row">
-	<div class="col-md-3 pull-left">
+	<div class="col-md-3 ">
 		<div class="card hasala-card text-center">
 			<div class="content">
 				<div class="image">
-					<img src="assets/placeholder.png">
+					<img src="assets/placeholder.png" class="thumbnail-215">
 				</div>
 				<div class="time-ago">Opened since 2 weeks ago</div>
 			</div>
@@ -91,10 +91,34 @@
 				<div class="description">
 					<div class="row">
 						<div class="col-md-9">
-							<p>{{hasala.description}}</p>
+							<div id="hasala-desc-tabs">
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="pull-right">
+									  	<a href="#arabic-desc" aria-controls="arabic-desc" role="tab" data-toggle="tab">عربي</a>
+									</li>
+									<li role="presentation" class="pull-right active">
+									    <a href="#english-desc" aria-controls="english-desc" role="tab" data-toggle="tab">Eng</a>
+									</li>
+								</ul>
+								<div class="tab-content">
+								    <div role="tabpanel" class="tab-pane active" id="english-desc">
+								    	<textarea class="form-control {{!desc_edit ? 'readonly' : ''}}" placeholder="Enter Description" required ng-model="hasala.description_eng" ng-readonly="!desc_edit" rows="4"></textarea>
+								    </div>
+									<div role="tabpanel" class="tab-pane" id="arabic-desc">
+										<textarea class="form-control arabic {{!desc_edit ? 'readonly' : ''}}" placeholder="إدخال وصف..." required ng-model="hasala.description_ar" ng-readonly="!desc_edit" rows="4"></textarea>
+									</div>
+									<a class="edit-icon" ng-if="!desc_edit" ng-click="toggle('desc_edit')">
+										<img src="assets/pencil.png">
+									</a>
+							    </div>
+							</div>
 						</div>
 						<div class="col-md-3">
-							
+							<div class="text-center">
+								<img src="assets/donations-lg.png">
+								<h1 class="orange">{{hasala.donations | number}} LE</h1>
+								<h4>Total Donataions</h4>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -166,7 +190,7 @@
 						</div>
 						<div class="col-md-9 update-title">
 							<input class="form-control" type="text" placeholder="Title">
-							<input class="form-control" type="text" placeholder="Arabic Title">
+							<input class="form-control arabic" type="text" placeholder="العنوان">
 						</div>
 					</div>
 					<div class="row">
@@ -175,23 +199,99 @@
 						</div>
 						<div class="col-md-9 pull-right">
 							<div id="update-hasala-tabs">
-							  <ul class="nav nav-tabs" role="tablist">
+							  <ul class="nav nav-tabs nav-tabs-pm" role="tablist">
 							    <li role="presentation" class="pull-right">
-							    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">Arabic</a>
+							    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">عربي</a>
 							    </li>
 							    <li role="presentation" class="pull-right active">
 							    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
 							    </li>
 							  </ul>
 							  <div class="tab-content">
-							    <div role="tabpanel" class="tab-pane active" id="arabic-content">
-							    	<textarea class="form-control" rows="5" placeholder="Enter arabic brief update here ..."></textarea>
+							    <div role="tabpanel" class="tab-pane " id="arabic-content">
+							    	<textarea class="form-control arabic" rows="5" placeholder="إدخال وصف..."></textarea>
 							    </div>
-							    <div role="tabpanel" class="tab-pane" id="english-content">
-							    	<textarea class="form-control" rows="5" placeholder="Enter brief update here ..."></textarea>
+							    <div role="tabpanel" class="tab-pane active" id="english-content">
+							    	<textarea class="form-control" rows="5" placeholder="Enter description ..."></textarea>
 							    </div>
 							  </div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="hasala-milestones">
+			<div id="hasala-milestone-tabs">
+				<ul class="nav nav-tabs nav-tabs-pm" role="tablist">
+				    <li role="presentation" class="pull-right">
+				    	<a href="#milestones" aria-controls="milestones" role="tab" data-toggle="tab">Milestones</a>
+				    </li>
+				    <li role="presentation" class="pull-right active">
+				    	<a href="#updates" aria-controls="updates" role="tab" data-toggle="tab">Updates</a>
+				    </li>
+				</ul>
+				<div class="card">
+					<div class="content">
+						<div class="row text-left">
+							<button class="btn {{updates_lang == 'eng' ? 'btn-primary': 'btn-default'}}" ng-click="changeUpdatesLang('eng')">Eng</button>
+							<button class="btn {{updates_lang == 'ar' ? 'btn-primary': 'btn-default'}}" ng-click="changeUpdatesLang('ar')">عربي</button>
+						</div>
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane " id="milestones">
+						    	<ul class="list-group">
+								  	<li class="list-group-item row display-flex" ng-repeat="milestone in milestones">
+								  		<div class="col-md-1">
+								  			<h4 class="{{milestone.finished ? 'orange-bg': 'primary-bg'}} circle text-center">{{$index+1}}</h4>
+								  		</div>
+								  		<div class="col-md-5">
+								  			<div class="title">
+								  				<h3 class="f-m">{{milestone.title}}</h3>
+								  			</div>
+								  			<p ng-if="updates_lang=='eng'">{{milestone.description_eng}}</p>
+								  			<p ng-if="updates_lang=='ar'">{{milestone.description_ar}}</p>
+								  		</div>
+								  		<div class="col-md-3 text-center target">
+								  			<div class="vertical-align">
+									  			<h5 class="n-m">Target Donations</h5>
+									  			<img src="assets/donations.png">
+									  			<span class="orange">{{milestone.target | number}} LE</span>
+									  		</div>
+								  		</div>
+								  		<div class="col-md-3">
+								  			<button class="btn {{milestone.finished ? 'orange-bg disabled' : 'btn-primary'}} btn-lg full-width vertical-align" ng-click="markFinished($index)">{{milestone.finished ? 'Finished' : 'Mark as Finished'}}</button>
+								  		</div>
+								  	</li>
+								</ul>
+						    </div>
+						    <div role="tabpanel" class="tab-pane active" id="updates">
+						    	<ul class="list-group">
+								  	<li class="list-group-item" ng-repeat="milestone in milestones">
+								  		<h5 class="pull-right primary f-m n-m"> MILESTONE #2</h5>
+								  		<div class="row full-width display-flex">
+									  		<div class="col-md-3">
+									  			<img src="assets/placeholder.png" class="thumbnail-215">
+									  		</div>
+									  		<div class="col-md-6">
+									  			<div class="title">
+										  			<h2><span class="primary">#{{$index+1}}. </span>{{milestone.title}}</h2>
+										  			<p class="sub-title">Updated at 15/02/2017</p>
+										  		</div>
+									  			<p ng-if="updates_lang=='eng'">{{milestone.description_eng}}</p>
+									  			<p class="arabic" ng-if="updates_lang=='ar'">{{milestone.description_ar}}</p>
+									  		</div>
+									  		<div class="col-md-3 text-center target">
+									  			<div class="bottom-align">
+										  			<h5 class="n-m">Total Donations then:</h5>
+										  			<img src="assets/donations.png">
+										  			<span class="orange">{{milestone.target | number}} LE</span>
+										  		</div>
+									  		</div>
+									  	</div>
+								  	</li>
+								</ul>
+						    </div>
 						</div>
 					</div>
 				</div>
