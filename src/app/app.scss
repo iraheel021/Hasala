@@ -41,6 +41,7 @@ p {
 	background: #92c510;
 	height: 65px;
 	margin: 0;
+	padding: 0 34px 0 25px;
 
 	.navbar-brand {
 		margin-top: -10px;
@@ -110,7 +111,7 @@ p {
 
 .main-container {
 	flex-grow: 1;
-    margin: 25px;
+    margin: 2%;
 	width: auto;
 }
 
@@ -119,6 +120,7 @@ p {
 	background: white;
 	border-radius: 3px;
 	padding: 0;
+	margin-bottom: 20px;
 	
 	.banner {
 		position: relative;
@@ -149,7 +151,7 @@ p {
 
 	.extra-meta {
 		height: 52px;
-	    padding: 10px 15px;
+	    padding: 10px 2%;
 	    line-height: 2;
 	}
 }
@@ -242,6 +244,10 @@ textarea {
 	display: flex;
 }
 
+.position-relative {
+	position: relative;
+}
+
 .vertical-align {
 	position: relative;
     top: 50%;
@@ -269,4 +275,22 @@ textarea {
 .thumbnail-215 {
 	width: 215px;
     height: 215px;
+}
+
+@media only screen and (max-width: 780px) {
+	.statistics {
+		.statistic {
+			width: 50%;
+		}
+
+		.statistic:nth-child(2n):after {
+			content: "";
+		}
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.main-card {
+		padding: 0;
+	}
 }

@@ -1,5 +1,5 @@
 <div class="row admin.home">
-	<div class="col-md-3 pull-left card">
+	<div class="col-md-3 col-sm-6 pull-left card side-card">
 		<div class="banner">
 			<img src="assets/placeholder.png">
 		</div>
@@ -33,7 +33,7 @@
 			<span class="f-m">Active since 3 weeks</span>
 		</div>
 	</div>
-	<div class="col-md-9 pull-right">
+	<div class="col-md-9 col-sm-12 pull-right n-p-r main-card">
 		<div class="four statistics card">
 			<div class="statistic">
 				<div clas="image">
@@ -69,7 +69,7 @@
 			<h3>Let's Update the People!</h3>
 			<div class="card n-p">
 				<div class="row header">
-					<div class="col-md-5 pull-left inline-image-field">
+					<div class="col-md-6 col-sm-6 col-xs-12 inline-image-field">
 						<img class="img-circle" src="assets/placeholder.png">
 						<select class="form-control n-r">
 							<option value="" selected disabled>No Hasalas yet</option>
@@ -78,13 +78,13 @@
 							<option>Hasala 3</option>
 						</select>
 					</div>
-					<div class="col-md-4 update-type pull-right text-right">
-						<div class="radio-inline pull-left">
+					<div class="col-md-6 col-sm-6 col-xs-12 update-type text-right">
+						<div class="radio-inline">
 							<label>
 								<input type="radio" name="updateType" value="regular" ng-model="update_type">Regular Update
 							</label>
 						</div>
-						<div class="milestone-update pull-right">
+						<div class="milestone-update">
 							<div class="radio-inline">
 								<label>
 									<input type="radio" name="updateType" value="milestone" ng-model="update_type">Milestone Update
@@ -100,49 +100,59 @@
 					</div>
 				</div>
 				<div class="content">
-					<div class="row">
-						<div class="col-md-1">
+					<div class="row position-relative">
+						<div class="col-md-1 col-sm-1 col-xs-12 text-center">
 							<img src="assets/update-title.png">
 						</div>
-						<div class="col-md-9 update-title">
-							<input class="form-control" type="text" placeholder="Title">
-							<input class="form-control arabic" type="text" placeholder="العنوان">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-2 pull-right upload-image">
-							<img src="assets/update-image.png">
-						</div>
-						<div class="col-md-9 pull-right">
-							<div id="update-hasala-tabs">
-							  <ul class="nav nav-tabs nav-tabs-pm" role="tablist">
-							    <li role="presentation" class="pull-right">
-							    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">عربي</a>
-							    </li>
-							    <li role="presentation" class="pull-right active">
-							    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
-							    </li>
-							  </ul>
-							  <div class="tab-content">
-							    <div role="tabpanel" class="tab-pane " id="arabic-content">
-							    	<textarea class="form-control arabic" rows="5" placeholder="إدخال وصف..."></textarea>
-							    </div>
-							    <div role="tabpanel" class="tab-pane active" id="english-content">
-							    	<textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
-							    </div>
-							  </div>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<div class="row update-title">
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input class="form-control" type="text" placeholder="Title">
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input class="form-control arabic" type="text" placeholder="العنوان">
+								</div>
+							</div>
+							<div class="row">
+								<div id="update-hasala-tabs">
+								  <ul class="nav nav-tabs nav-tabs-pm" role="tablist">
+								    <li role="presentation" class="pull-right">
+								    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">عربي</a>
+								    </li>
+								    <li role="presentation" class="pull-right active">
+								    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
+								    </li>
+								  </ul>
+								  <div class="tab-content">
+								    <div role="tabpanel" class="tab-pane " id="arabic-content">
+								    	<textarea class="form-control arabic" rows="5" placeholder="إدخال وصف..."></textarea>
+								    </div>
+								    <div role="tabpanel" class="tab-pane active" id="english-content">
+								    	<textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
+								    </div>
+								  </div>
+								</div>
 							</div>
 						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 upload-image" >
+							<img src="assets/update-image.png">
+						</div>
+					</div>
+					<div class="row update-submit text-right">
+						<button class="btn btn-primary btn-lg">Update Now</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="my-hasalas" id="myHasalas">
-			
+			<h3 class="visible-xs">
+				<img src="assets/all-hasalas.png">
+				All Hasalas
+			</h3>
 			<div id="all-hasalas-tabs">
 				<ul class="nav nav-tabs nav-tabs-pm" role="tablist">
-					<li class="pull-left">
+					<li class="pull-left hidden-xs">
 						<h3>
 							<img src="assets/all-hasalas.png">
 							All Hasalas
@@ -169,25 +179,23 @@
 						<div class="row all-hasalas-nav">
 							<ul class="nav navbar-nav full-width">
 								<li>
-									<a class="f-l {{sub_cat == 'all' ? 'active' : ''}}" ng-click="sub_cat='all'"> All </a>
+									<a class="f-l text-center {{sub_cat == 'all' ? 'active' : ''}}" ng-click="sub_cat='all'"> All </a>
 								</li>
 								<li>
-									<a class="f-l {{sub_cat == 'health' ? 'active' : ''}}" ng-click="sub_cat='health'"> Health </a>
+									<a class="f-l text-center  {{sub_cat == 'health' ? 'active' : ''}}" ng-click="sub_cat='health'"> Health </a>
 								</li>
 								<li>
-									<a class="f-l {{sub_cat == 'water' ? 'active' : ''}}" ng-click="sub_cat='water'"> Water </a>
+									<a class="f-l text-center  {{sub_cat == 'water' ? 'active' : ''}}" ng-click="sub_cat='water'"> Water </a>
 								</li>
 								<li>
-									<a class="f-l {{sub_cat == 'orphans' ? 'active' : ''}}" ng-click="sub_cat='orphans'"> Orphans </a>
+									<a class="f-l text-center  {{sub_cat == 'orphans' ? 'active' : ''}}" ng-click="sub_cat='orphans'"> Orphans </a>
 								</li>
 								<li>
-									<a class="f-l {{sub_cat == 'education' ? 'active' : ''}}" ng-click="sub_cat='education'"> Education </a>
+									<a class="f-l text-center  {{sub_cat == 'education' ? 'active' : ''}}" ng-click="sub_cat='education'"> Education </a>
 								</li>
 								<div class="pull-right">
 									<a class="btn btn-primary n-r" ui-sref="admin.start">
-										<span class="pull-left">
-											<img src="add-hasala-btn.png">
-										</span>
+										<i class="fa fa-plus"></i>
 										Start A New Hasala
 									</a>
 								</div>
@@ -204,8 +212,8 @@
 						    		<img class="img-circle" src="assets/add-hasala.png">
 								</a>
 								<div ng-if="hasalas.length > 0">
-									<div class="row">
-								    	<div ng-repeat="hasala in hasalas" class="col-md-4 card">
+									<div class="row hasalas-list">
+								    	<div ng-repeat="hasala in hasalas" class="card">
 								    		<div class="banner">
 								    			<img src="assets/placeholder.png">
 								    		</div>

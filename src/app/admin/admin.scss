@@ -1,0 +1,13 @@
+.site-lang {
+	float: left;
+	padding: 12px 0;
+
+	button {
+		border: 1px solid white;
+	}
+
+	button.active {
+		background: white;
+		color: black;
+	}
+}

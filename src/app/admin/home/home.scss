@@ -40,9 +40,13 @@
 
 			.milestone-update {
 				position: relative;
+				display: inline-block;
+    			min-width: 180px;
+				
 				select {
 					position: absolute;
-    				top: 35px;
+    				top: 30px;
+    				right: 1px;
 				}
 			}
 		}
@@ -52,6 +56,10 @@
 		padding: 20px 0px;
 
 		.update-title {
+			.col-md-6, .col-sm-6 {	padding: 0; width: 48%; }
+			.col-md-6:first-child, .col-sm-6:first-child { margin-right: 4%; }
+		}
+		/*.update-title {
 			input {
 				display: inline-block;
     			width: 46%;
@@ -60,8 +68,11 @@
 			input:last-child {
 				float: right;
 			}
-		}
+		}*/
 
+		.update-description {
+			.col-md-1 {	width: 90px; }
+		}
 		#update-hasala-tabs {
 			.tab-content {
 				textarea {
@@ -69,9 +80,17 @@
 				}
 			}
 		}
-		.upload-image img {
+		.upload-image {
 			cursor: pointer;
-			height: 154px;
+			padding: 0;
+			position: absolute;
+		    bottom: 8%;
+		    right: 1%;
+
+			img { 
+				width: 100%;
+				max-width: 200px;
+			}
 		}
 	}
 }
@@ -113,10 +132,12 @@
 
 		.row { margin: 0; }
 
-		.col-md-4 {
+		.hasalas-list .card {
 			width: 31.333333%;
 			margin: 1% ;
+			display: inline-block;
 		}
+
 		.empty {
 			position: absolute;
 		    top: 0;
@@ -159,7 +180,7 @@
 		font-size: 1.5rem;
     	color: orange;
 
-		img { margin-right: 10px; }
+		img { margin-right: 5px; }
 	}
 }
 
@@ -173,5 +194,40 @@
 		display: inline-block;
 	    margin-left: 20px;
 	    width: calc(100% - 90px);
+	}
+}
+
+
+@media only screen and (max-width: 768px) {
+	.update-section {
+		.header .update-type {
+			margin: 16px 0;
+			text-align: center;
+		}
+
+		.content {
+			.upload-image {
+				position: relative;
+				text-align: center;
+			}
+		}
+
+		.update-title {
+			> * { width: 100% !important; margin: 10px 0; }
+		}
+
+		.update-submit { text-align: center !important; }
+	}
+
+	.my-hasalas {
+		.tab-content .hasalas-list .card {
+			width: 48%;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.my-hasalas .tab-content .hasalas-list .card {
+		width: 98%;
 	}
 }

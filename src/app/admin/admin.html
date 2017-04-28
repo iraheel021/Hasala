@@ -1,18 +1,31 @@
 <nav class="navbar navbar-default navbar-static-top">
-	<a class="navbar-brand navbar-right" ui-sref="admin.home">
-		<img src="assets/Hasala-nav-logo.png">
-	</a>
-	<ul class="nav navbar-nav">
-		<li>
-			<a class="f-l" ui-sref="admin.home" ui-sref-active="active"> Admin Panel </a>
-		</li>
-		<li>
-			<a class="f-l" href="#myHasalas"> My Hasalas </a>
-		</li>
-		<li>
-			<a class="f-l" ui-sref="admin.ngo" ui-sref-active="active"> My Profile </a>
-		</li>
-	</ul>
+	<div class="site-lang">
+		<button class="btn {{site_lang=='eng' ? 'active' : 'primary-bg'}}" ng-click="setLanguage('eng')">Eng</button>
+		<button class="btn {{site_lang=='ar' ? 'active' : 'primary-bg'}}" ng-click="setLanguage('ar')">عربي</button>
+	</div>
+	<div class="navbar-header navbar-right">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	    </button>
+		<a class="navbar-brand" ui-sref="admin.home">
+			<img src="assets/Hasala-nav-logo.png">
+		</a>
+	</div>
+	<div class="collapse navbar-collapse primary-bg" id="main-nav">
+		<ul class="nav navbar-nav">
+			<li>
+				<a class="f-l" ui-sref="admin.home" ui-sref-active="active"> Admin Panel </a>
+			</li>
+			<li>
+				<a class="f-l" href="#myHasalas"> My Hasalas </a>
+			</li>
+			<li>
+				<a class="f-l" ui-sref="admin.ngo" ui-sref-active="active"> My Profile </a>
+			</li>
+		</ul>
+	</div>
 </nav>
 
 <div class="container-fluid main-container ">
