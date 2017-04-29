@@ -1,9 +1,9 @@
 <div class="admin start">
 	<div class="card hasala-intro">
 		<div class="banner">
-			<img src="assets/start-hasala-banner.png">
+			<!-- <img class="banner-image" src="assets/start-hasala-banner.png"> -->
 			<div class="row upload">
-				<div class="col-md-4 upload-link">
+				<div class="col-md-5 col-sm-6 col-xs-6 upload-link">
 					<div>
 						<h2>
 							<img src="assets/upload.png">
@@ -12,7 +12,7 @@
 						<p>Share it among thousands of Hasalas and keeep us engaged!</p>
 					</div>
 				</div>
-				<div class="col-md-4 pull-right upload-image">
+				<div class="col-md-4 col-sm-5 col-xs-6 pull-right upload-image">
 					<img src="assets/placeholder.png">
 				</div>
 			</div>
@@ -20,14 +20,14 @@
 		<div class="content n-p">
 			<div class="header">
 				<div class="row n-m">
-					<div class="col-md-4">
+					<div class="col-md-4 col-sm-6 col-xs-12 pull-left">
 						<div class="form-group">
 							<label>Title</label>
 							<input class="form-control" type="text">
 						</div>
 					</div>
-					<div class="col-md-4 pull-right">
-						<div class="form-group">
+					<div class="col-md-4 col-sm-6 col-xs-12 pull-right">
+						<div class="form-group arabic">
 							<label>Title</label>
 							<input class="form-control" type="text">
 						</div>
@@ -113,19 +113,19 @@
 							</a>
 						</div>
 					</div>
-					<div class="col-md-6 text-right">
-						<div class="form-group">
+					<div class="col-md-6 arabic">
+						<div class="form-group ">
 							<label>Write Story</label>
 							<textarea class="form-control" rows="5" placeholder="This cause is about helping a woman..."></textarea>
 						</div>
 						<div class="tools arb f-m">
 							<a class="add-photo">
-								+ ADD PHOTO
 								<img src="assets/camera.png">
+								+ ADD PHOTO
 							</a>
 							<a class="add-text">
-								+ ADD TEXT
 								<img src="assets/des-arb.png">
+								+ ADD TEXT
 							</a>
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 				</div>
 				<div class="col-md-4">
 					<div id="milestone-title-tabs">
-						<ul class="nav nav-tabs" role="tablist">
+						<ul class="nav nav-tabs nav-tabs-pm" role="tablist">
 							<li role="presentation" class="pull-right">
 							    <a href="#arabic-title" aria-controls="arabic-title" role="tab" data-toggle="tab">Title</a>
 							</li>
@@ -162,7 +162,7 @@
 						</ul>
 						<div class="tab-content">
 						    <div role="tabpanel" class="tab-pane" id="arabic-title">
-						    	<input class="form-control" type="text" placeholder="arabic title">
+						    	<input class="form-control arabic" type="text" placeholder="arabic title">
 						    </div>
 							<div role="tabpanel" class="tab-pane active" id="english-title">
 						    	<input class="form-control" type="text" placeholder="english title">
@@ -170,18 +170,18 @@
 					    </div>
 					</div>
 					<div class="form-group milestone-target">
-						<label class="control-label col-xs-4">
+						<label class="control-label col-md-4 col-sm-3 col-xs-4 n-p">
 							<img src="assets/donations.png"> Target 
 						</label>
-						<div class="col-xs-5">
+						<div class="col-md-5 col-sm-5 col-xs-6 n-p-r">
 							<input class="form-control" type="number" min=0 placeholder="120,390">
 						</div>
-						<span class="currency">EGP</span>
+						<div class="col-md-2 col-sm-2 col-xs-2 currency">EGP</div>
 					</div>
 				</div>
-				<div class="col-md-7 n-p-r">
+				<div class="col-md-7">
 					<div id="milestone-desc-tabs">
-						<ul class="nav nav-tabs" role="tablist">
+						<ul class="nav nav-tabs nav-tabs-pm" role="tablist">
 							<li role="presentation" class="pull-right">
 							    <a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">Description</a>
 							</li>
@@ -191,7 +191,7 @@
 						</ul>
 						<div class="tab-content">
 						    <div role="tabpanel" class="tab-pane" id="arabic-content">
-						    	<textarea class="form-control" rows="4" placeholder="Enter arabic description here ..."></textarea>
+						    	<textarea class="form-control arabic" rows="4" placeholder="Enter arabic description here ..."></textarea>
 						    </div>
 							<div role="tabpanel" class="tab-pane active" id="english-content">
 						    	<textarea class="form-control" rows="4" placeholder="Enter english brief update here ..."></textarea>
@@ -200,7 +200,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row text-right">
+			<div class="row text-right n-m">
 				<a class="add-milestone f-m" ng-click="addNewMilestone()">+ Milestone</a>
 			</div>
 		</div>
