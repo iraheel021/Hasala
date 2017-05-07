@@ -14,7 +14,14 @@
 		})
 	}
 
-	function AuthController() {
+	function AuthController($rootScope, $translate) {
+		$rootScope.site_lang = localStorage.getItem('lang') || 'eng';
 
+		$rootScope.changeLanguage = function (key) {
+			$rootScope.site_lang = key;
+		    $translate.use(key);
+
+		    localStorage.setItem("lang", key);
+		};
 	}
 })();

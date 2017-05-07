@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top">
 	<div class="site-lang">
-		<button class="btn {{site_lang=='eng' ? 'active' : 'primary-bg'}}" ng-click="setLanguage('eng')">Eng</button>
-		<button class="btn {{site_lang=='ar' ? 'active' : 'primary-bg'}}" ng-click="setLanguage('ar')">عربي</button>
+		<button class="btn {{$root.site_lang=='eng' ? 'active' : 'primary-bg'}}" ng-click="$root.changeLanguage('eng')">Eng</button>
+		<button class="btn {{$root.site_lang=='ar' ? 'active' : 'primary-bg'}}" ng-click="$root.changeLanguage('ar')">عربي</button>
 	</div>
 	<div class="navbar-header navbar-right">
 		<button type="button" class="navbar-toggle collapsed n-m-r" data-toggle="collapse" data-target="#main-nav" aria-expanded="false">
@@ -16,13 +16,13 @@
 	<div class="collapse navbar-collapse primary-bg" id="main-nav">
 		<ul class="nav navbar-nav">
 			<li>
-				<a class="f-l" ui-sref="admin.home" ui-sref-active="active"> Admin Panel </a>
+				<a class="f-l" ui-sref="admin.home" ui-sref-active="active"> {{'ADMIN PANEL' | translate}} </a>
 			</li>
 			<li>
-				<a class="f-l" href="#myHasalas"> My Hasalas </a>
+				<a class="f-l" href="#myHasalas"> {{'MY HASALAS' | translate}} </a>
 			</li>
 			<li>
-				<a class="f-l" ui-sref="admin.ngo" ui-sref-active="active"> My Profile </a>
+				<a class="f-l" ui-sref="admin.ngo" ui-sref-active="active"> {{'MY PROFILE' | translate}} </a>
 			</li>
 		</ul>
 	</div>

@@ -4,20 +4,20 @@
 	</div>
 	<div class="col-md-6">
 		<form role="form" name="loginForm" ng-submit="loginForm.$valid ? login(): ''">
-			<h2 class="primary m-b">Welcome to Hasala!</h2>
+			<h2 class="primary m-b">{{'WELCOME' | translate}}</h2>
 			
 			<div class="field m-b">
-				<label for="inputEmail">NGO Email</label>
+				<label for="inputEmail">{{'EMAIL' | translate}}</label>
 				<input id="inputEmail" type="email" class="form-control" required>
 			</div>
 
 			<div class="field m-b">
-				<label for="inputPassword">Password</label>
+				<label for="inputPassword">{{'PASSWORD' | translate}}</label>
 				<input id="inputPassword" type="password" class="form-control" required>
 			</div>
 
 			<div class="pull-right">
-				<button type="submit" class="btn btn-primary">Log In</button>
+				<button type="submit" class="btn btn-primary">{{'LOGIN' | translate}}</button>
 			</div>
 		</form>
 	</div>

@@ -11,18 +11,18 @@
 				<div class="two statistics small">
 					<div class="statistic">
 						<div class="value">0</div>
-						<div class="label">On Going</div>
+						<div class="label">{{'ON GOING' | translate}}</div>
 					</div>
 					<div class="statistic">
 						<div class="value">0</div>
-						<div class="label">Finished</div>
+						<div class="label">{{'FINISHED' | translate}}</div>
 					</div>
 				</div>
 				<a class="start-hasala-box" ui-sref="admin.start">
 					<div class="image">
 						<img src="assets/start-hasala.png">
 					</div>
-					<button class="btn btn-primary n-r full-width" type="button">Start A New Hasala</button>
+					<button class="btn btn-primary n-r full-width" type="button">{{'START HASALA' | translate}}</button>
 				</a>
 				<p>
 					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
@@ -40,33 +40,33 @@
 					<img src="assets/followers.png">
 				</div>
 				<div class="value">0</div>
-				<div class="label">Followers</div>
+				<div class="label">{{'FOLLOWERS' | translate}}</div>
 			</div>
 			<div class="statistic">
 				<div clas="image">
 					<img src="assets/views.png">
 				</div>
 				<div class="value">0</div>
-				<div class="label">Views</div>
+				<div class="label">{{'VIEWS' | translate}}</div>
 			</div>
 			<div class="statistic">
 				<div clas="image">
 					<img src="assets/donors.png">
 				</div>
 				<div class="value">0</div>
-				<div class="label">Donors</div>
+				<div class="label">{{'DONORS' | translate}}</div>
 			</div>
 			<div class="statistic">
 				<div clas="image">
 					<img src="assets/donations.png">
 				</div>
 				<div class="value">0</div>
-				<div class="label">Total Donations</div>
+				<div class="label">{{'TOTAL DONATIONS' | translate}}</div>
 			</div>
 		</div>
 
 		<div class="update-section">
-			<h3>Let's Update the People!</h3>
+			<h3>{{'LETS UPDATE' | translate}}</h3>
 			<div class="card n-p">
 				<div class="row header">
 					<div class="col-md-6 col-sm-6 col-xs-12 inline-image-field">
@@ -81,13 +81,13 @@
 					<div class="col-md-6 col-sm-6 col-xs-12 update-type text-right">
 						<div class="radio-inline">
 							<label>
-								<input type="radio" name="updateType" value="regular" ng-model="update_type">Regular Update
+								<input type="radio" name="updateType" value="regular" ng-model="update_type">{{'REGULAR UPDATES' | translate}}
 							</label>
 						</div>
 						<div class="milestone-update">
 							<div class="radio-inline">
 								<label>
-									<input type="radio" name="updateType" value="milestone" ng-model="update_type">Milestone Update
+									<input type="radio" name="updateType" value="milestone" ng-model="update_type">{{'MILESTONE UPDATES' | translate}}
 								</label>
 							</div>
 							<select class="form-control n-r" ng-if="update_type=='milestone'">
@@ -139,7 +139,7 @@
 						</div>
 					</div>
 					<div class="row update-submit text-right">
-						<button class="btn btn-primary btn-lg">Update Now</button>
+						<button class="btn btn-primary btn-lg">{{'UPDATE NOW' | translate}}</button>
 					</div>
 				</div>
 			</div>
@@ -148,30 +148,30 @@
 		<div class="my-hasalas" id="myHasalas">
 			<h3 class="visible-xs">
 				<img src="assets/all-hasalas.png">
-				All Hasalas
+				{{'ALL HASALAS' | translate}}
 			</h3>
 			<div id="all-hasalas-tabs">
 				<ul class="nav nav-tabs nav-tabs-pm" role="tablist">
 					<li class="pull-left hidden-xs">
 						<h3>
 							<img src="assets/all-hasalas.png">
-							All Hasalas
+							{{'ALL HASALAS' | translate}}
 						</h3>
 					</li>
 				    <li role="presentation" class="pull-right {{hasala_tab == 'expired' ? 'active': ''}}">
-				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'expired'">Expired</a>
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'expired'">{{'EXPIRED' | translate}}</a>
 				    </li>
 				    <li role="presentation" class="pull-right {{hasala_tab == 'finished' ? 'active': ''}}">
-				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'finished'">Finished</a>
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'finished'">{{'FINISHED HASALAS' | translate}}</a>
 				    </li>
 				    <li role="presentation" class="pull-right {{hasala_tab == 'on-going' ? 'active': ''}}">
-				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'on-going'">On Going</a>
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'on-going'">{{'ON GOING HASALAS' | translate}}</a>
 				    </li>
 				    <li role="presentation" class="pull-right {{hasala_tab == 'needs-update' ? 'active': ''}}">
-				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'needs-update'">Needs Update</a>
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'needs-update'">{{'NEEDS UPDATES' | translate}}</a>
 				    </li>
 				    <li role="presentation" class="pull-right {{hasala_tab == 'all-hasalas' ? 'active': ''}}">
-				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'all-hasalas'">All Hasalas</a>
+				    	<a role="tab" data-toggle="tab" ng-click="hasala_tab = 'all-hasalas'">{{'ALL HASALAS' | translate}}</a>
 				    </li>
 				</ul>
 				<div class="card">
@@ -179,24 +179,24 @@
 						<div class="row all-hasalas-nav">
 							<ul class="nav navbar-nav full-width">
 								<li>
-									<a class="f-l text-center {{sub_cat == 'all' ? 'active' : ''}}" ng-click="sub_cat='all'"> All </a>
+									<a class="f-l text-center {{sub_cat == 'all' ? 'active' : ''}}" ng-click="sub_cat='all'"> {{'ALL' | translate}} </a>
 								</li>
 								<li>
-									<a class="f-l text-center  {{sub_cat == 'health' ? 'active' : ''}}" ng-click="sub_cat='health'"> Health </a>
+									<a class="f-l text-center  {{sub_cat == 'health' ? 'active' : ''}}" ng-click="sub_cat='health'"> {{'HEALTH' | translate}} </a>
 								</li>
 								<li>
-									<a class="f-l text-center  {{sub_cat == 'water' ? 'active' : ''}}" ng-click="sub_cat='water'"> Water </a>
+									<a class="f-l text-center  {{sub_cat == 'water' ? 'active' : ''}}" ng-click="sub_cat='water'"> {{'WATER' | translate}} </a>
 								</li>
 								<li>
-									<a class="f-l text-center  {{sub_cat == 'orphans' ? 'active' : ''}}" ng-click="sub_cat='orphans'"> Orphans </a>
+									<a class="f-l text-center  {{sub_cat == 'orphans' ? 'active' : ''}}" ng-click="sub_cat='orphans'"> {{'ORPHANS' | translate}} </a>
 								</li>
 								<li>
-									<a class="f-l text-center  {{sub_cat == 'education' ? 'active' : ''}}" ng-click="sub_cat='education'"> Education </a>
+									<a class="f-l text-center  {{sub_cat == 'education' ? 'active' : ''}}" ng-click="sub_cat='education'"> {{'EDUCATION' | translate}} </a>
 								</li>
 								<div class="pull-right">
 									<a class="btn btn-primary n-r" ui-sref="admin.start">
 										<i class="fa fa-plus"></i>
-										Start A New Hasala
+										{{'START HASALA' | translate}}
 									</a>
 								</div>
 							</ul>
@@ -206,8 +206,8 @@
 								<a class="empty" ng-if="hasalas.length < 1" ui-sref="admin.start">
 									<img src="assets/all-hasalas-lg.png">
 						    		<div class="content">
-						    			<h4>You haven't started any hasalas yet!</h4>
-						    			<h2>Start a Hasala, start the change</h2>
+						    			<h4>{{'NOT STARTED ANY HASALA' | translate}}</h4>
+						    			<h2>{{'START HASALA START CHANGE' | translate}}</h2>
 						    		</div>
 						    		<img class="img-circle" src="assets/add-hasala.png">
 								</a>
@@ -240,7 +240,7 @@
 								    				<img src="assets/donations.png">{{hasala.donations | number}} LE
 								    			</span>
 								    			<span class="pull-right">
-								    				<a type="button" class="btn btn-primary" ui-sref="admin.hasala({id: $index})">Update Now</a>
+								    				<a type="button" class="btn btn-primary" ui-sref="admin.hasala({id: $index})">{{'UPDATE NOW' | translate}}</a>
 								    			</span>
 								    		</div>
 								    	</div>

@@ -1,4 +1,8 @@
 <nav class="navbar navbar-default navbar-static-top">
+	<div class="site-lang">
+		<button class="btn {{$root.site_lang=='eng' ? 'active' : 'primary-bg'}}" ng-click="$root.changeLanguage('eng')">Eng</button>
+		<button class="btn {{$root.site_lang=='ar' ? 'active' : 'primary-bg'}}" ng-click="$root.changeLanguage('ar')">عربي</button>
+	</div>
 	<a class="navbar-brand navbar-right" href="/">
 		<img src="assets/Hasala-nav-logo.png">
 	</a>

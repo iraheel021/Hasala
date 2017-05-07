@@ -21,7 +21,29 @@ html, body {
 
 	.pull-right {
 		float: left !important;
+	}
+
+	.text-left {
+		text-align: right;
+	}
+
+	.text-right {
+		text-align: left;
 	}	
+
+	.n-p-l { padding-right: 0; }
+	.n-p-r { padding-left: 0; }
+
+	.n-m-l { margin-right: 0; }
+	.n-m-r { margin-left: 0; }
+}
+
+[dir='ltr'] {
+	.n-p-l { padding-left: 0; }
+	.n-p-r { padding-right: 0; }
+	
+	.n-m-l { margin-left: 0; }
+	.n-m-r { margin-right: 0; }
 }
 
 .arabic {
@@ -71,12 +93,8 @@ p {
 }
 
 .n-p { padding: 0 !important; }
-.n-p-l { padding-left: 0; }
-.n-p-r { padding-right: 0; }
 
 .n-m { margin: 0 !important; }
-.n-m-l { margin-left: 0; }
-.n-m-r { margin-right: 0; }
 
 .f-m {
 	font-family: roboto-medium;

@@ -14,14 +14,15 @@
 		})
 	}
 
-	function AdminController($scope, $rootScope) {
+	function AdminController($rootScope, $translate) {
 		$rootScope.site_lang = localStorage.getItem('lang') || 'eng';
 
-		$scope.setLanguage = function(lang) {
-			$rootScope.site_lang = lang;
+		$rootScope.changeLanguage = function (key) {
+			$rootScope.site_lang = key;
+		    $translate.use(key);
 
-			localStorage.setItem("lang", lang);
-		}
+		    localStorage.setItem("lang", key);
+		};
 	}
 
 })();
