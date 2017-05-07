@@ -11,3 +11,9 @@
 		color: black;
 	}
 }
+
+@media (max-width: 768px) {
+	.navbar {
+		padding: 0 12px;
+	}
+}
