@@ -70,17 +70,13 @@ p {
 	border-radius: 0;	
 }
 
-.n-p {
-	padding: 0 !important;
-}
+.n-p { padding: 0 !important; }
+.n-p-l { padding-left: 0; }
+.n-p-r { padding-right: 0; }
 
-.n-p-r {
-	padding-right: 0;
-}
-
-.n-m {
-	margin: 0 !important;
-}
+.n-m { margin: 0 !important; }
+.n-m-l { margin-left: 0; }
+.n-m-r { margin-right: 0; }
 
 .f-m {
 	font-family: roboto-medium;
@@ -197,6 +193,7 @@ p {
 
 textarea {
 	resize: none;
+	overflow: hidden;
 }
 
 .gray {

@@ -1,9 +1,9 @@
 <div class="admin hasala row">
-	<div class="col-md-3 ">
+	<div class="col-md-3 pull-left side-card n-p">
 		<div class="card hasala-card text-center">
 			<div class="content">
 				<div class="image">
-					<img src="assets/placeholder.png" class="thumbnail-215">
+					<img src="assets/placeholder.png" class="">
 				</div>
 				<div class="time-ago">Opened since 2 weeks ago</div>
 			</div>
@@ -64,12 +64,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-9 pull-right">
+	<div class="col-md-9 main-card pull-right">
 		<div class="card hasala-description">
-			<div class="category">
-				<b>{{hasala.category}}</b>
-			</div>
 			<div class="content">
+				<div class="category pull-right">
+					<b>{{hasala.category}}</b>
+				</div>
 				<div class="header">
 					<a class="edit-icon" ng-if="!title_edit" ng-click="toggle('title_edit')">
 						<img src="assets/pencil.png">
@@ -156,7 +156,7 @@
 			</div>
 		</div> 
 
-		<div class="update-section">
+		<!-- <div class="update-section">
 			<div class="card n-p">
 				<div class="row header">
 					<div class="col-md-5 pull-left">
@@ -220,6 +220,85 @@
 					</div>
 				</div>
 			</div>
+		</div> -->
+		<div class="update-section">
+			<h3>Let's Update the People!</h3>
+			<div class="card n-p">
+				<div class="row header">
+					<div class="col-md-6 col-sm-6 col-xs-12 inline-image-field">
+						<img class="img-circle" src="assets/placeholder.png">
+						<select class="form-control n-r">
+							<option value="" selected disabled>No Hasalas yet</option>
+							<option>Hasala 1</option>
+							<option>Hasala 2</option>
+							<option>Hasala 3</option>
+						</select>
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-12 update-type text-right">
+						<div class="radio-inline">
+							<label>
+								<input type="radio" name="updateType" value="regular" ng-model="update_type">Regular Update
+							</label>
+						</div>
+						<div class="milestone-update">
+							<div class="radio-inline">
+								<label>
+									<input type="radio" name="updateType" value="milestone" ng-model="update_type">Milestone Update
+								</label>
+							</div>
+							<select class="form-control n-r" ng-if="update_type=='milestone'">
+								<option value="" selected disabled>Select Milestone</option>
+								<option>Hasala 1</option>
+								<option>Hasala 2</option>
+								<option>Hasala 3</option>
+							</select>
+						</div>	
+					</div>
+				</div>
+				<div class="content">
+					<div class="row position-relative">
+						<div class="col-md-1 col-sm-1 col-xs-12 text-center">
+							<img src="assets/update-title.png">
+						</div>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<div class="row update-title">
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input class="form-control" type="text" placeholder="Title">
+								</div>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input class="form-control arabic" type="text" placeholder="العنوان">
+								</div>
+							</div>
+							<div class="row">
+								<div id="update-hasala-tabs">
+								  <ul class="nav nav-tabs nav-tabs-pm" role="tablist">
+								    <li role="presentation" class="pull-right">
+								    	<a href="#arabic-content" aria-controls="arabic-content" role="tab" data-toggle="tab">عربي</a>
+								    </li>
+								    <li role="presentation" class="pull-right active">
+								    	<a href="#english-content" aria-controls="english-content" role="tab" data-toggle="tab">English</a>
+								    </li>
+								  </ul>
+								  <div class="tab-content">
+								    <div role="tabpanel" class="tab-pane " id="arabic-content">
+								    	<textarea class="form-control arabic" rows="5" placeholder="إدخال وصف..."></textarea>
+								    </div>
+								    <div role="tabpanel" class="tab-pane active" id="english-content">
+								    	<textarea class="form-control" rows="5" placeholder="Enter description..."></textarea>
+								    </div>
+								  </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-12 upload-image" >
+							<img src="assets/update-image.png">
+						</div>
+					</div>
+					<div class="row update-submit text-right">
+						<button class="btn btn-primary btn-lg">Update Now</button>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="hasala-milestones">
@@ -234,14 +313,14 @@
 				</ul>
 				<div class="card">
 					<div class="content">
-						<div class="row text-left">
+						<div class="row text-left n-m">
 							<button class="btn {{updates_lang == 'eng' ? 'btn-primary': 'btn-default'}}" ng-click="changeUpdatesLang('eng')">Eng</button>
 							<button class="btn {{updates_lang == 'ar' ? 'btn-primary': 'btn-default'}}" ng-click="changeUpdatesLang('ar')">عربي</button>
 						</div>
 						<div class="tab-content">
 							<div role="tabpanel" class="tab-pane " id="milestones">
 						    	<ul class="list-group">
-								  	<li class="list-group-item row display-flex" ng-repeat="milestone in milestones">
+								  	<li class="list-group-item row" ng-repeat="milestone in milestones">
 								  		<div class="col-md-1">
 								  			<h4 class="{{milestone.finished ? 'orange-bg': 'primary-bg'}} circle text-center">{{$index+1}}</h4>
 								  		</div>
@@ -253,14 +332,14 @@
 								  			<p ng-if="updates_lang=='ar'">{{milestone.description_ar}}</p>
 								  		</div>
 								  		<div class="col-md-3 text-center target">
-								  			<div class="vertical-align">
+								  			<div class="">
 									  			<h5 class="n-m">Target Donations</h5>
 									  			<img src="assets/donations.png">
 									  			<span class="orange">{{milestone.target | number}} LE</span>
 									  		</div>
 								  		</div>
-								  		<div class="col-md-3">
-								  			<button class="btn {{milestone.finished ? 'orange-bg disabled' : 'btn-primary'}} btn-lg full-width vertical-align" ng-click="markFinished($index)">{{milestone.finished ? 'Finished' : 'Mark as Finished'}}</button>
+								  		<div class="col-md-3 action-button">
+								  			<button class="btn {{milestone.finished ? 'orange-bg disabled' : 'btn-primary'}} btn-lg full-width " ng-click="markFinished($index)">{{milestone.finished ? 'Finished' : 'Mark as Finished'}}</button>
 								  		</div>
 								  	</li>
 								</ul>
@@ -268,21 +347,21 @@
 						    <div role="tabpanel" class="tab-pane active" id="updates">
 						    	<ul class="list-group">
 								  	<li class="list-group-item" ng-repeat="milestone in milestones">
-								  		<h5 class="pull-right primary f-m n-m"> MILESTONE #2</h5>
-								  		<div class="row full-width display-flex">
-									  		<div class="col-md-3">
+								  		<h5 class="text-right primary f-m"> MILESTONE #2</h5>
+								  		<div class="row full-width n-m">
+									  		<div class="col-md-3 n-p-l">
 									  			<img src="assets/placeholder.png" class="thumbnail-215">
 									  		</div>
 									  		<div class="col-md-6">
 									  			<div class="title">
-										  			<h2><span class="primary">#{{$index+1}}. </span>{{milestone.title}}</h2>
+										  			<h2 class="n-m"><span class="primary">#{{$index+1}}. </span>{{milestone.title}}</h2>
 										  			<p class="sub-title">Updated at 15/02/2017</p>
 										  		</div>
 									  			<p ng-if="updates_lang=='eng'">{{milestone.description_eng}}</p>
 									  			<p class="arabic" ng-if="updates_lang=='ar'">{{milestone.description_ar}}</p>
 									  		</div>
 									  		<div class="col-md-3 text-center target">
-									  			<div class="bottom-align">
+									  			<div class="">
 										  			<h5 class="n-m">Total Donations then:</h5>
 										  			<img src="assets/donations.png">
 										  			<span class="orange">{{milestone.target | number}} LE</span>

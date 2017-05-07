@@ -3,7 +3,7 @@
 	.card {
 		margin-bottom: 20px;
 		.content {
-			padding: 40px;
+			padding: 6% 4%;
 		}
 	}
 
@@ -11,12 +11,20 @@
 		font-size: 3.5rem;
 	    padding: 10px 0;
 	    background: white;
+	    margin-top: 8%;
 	}
 
 	.hasala-card {
 		background: #fbfafa;
+		.content {
+			padding: 15px 15px;
+		}
+
 		.image {
-		 	/*img { width: 100%; }*/
+		 	img { 
+		 		width: 100%; 
+		 		min-height: 200px;
+		 	}
 		}
 
 		.time-ago {
@@ -38,7 +46,7 @@
 
 			.timer {
 				display: inline-block;
-    			width: 20%;
+    			width: 23%;
     			vertical-align: middle;	
 
     			.dynamic {
@@ -71,9 +79,11 @@
 		position: relative;
 
 		.category {
-			position: absolute;
+			/*position: absolute;
 			right: 20px;
 			top: 20px;
+			z-index: 100;*/
+		    margin-bottom: 10px;
 			color: #92c510;
 
 			b {
@@ -136,6 +146,7 @@
 
 		.description {
 			#hasala-desc-tabs {
+				margin-bottom: 25px;
 				.nav-tabs {
 					margin-bottom: 10px;
 
@@ -169,8 +180,8 @@
 	}
 
 	.hasala-milestones {
-		li.list-group-item {
-			padding: 40px 0;
+		li.list-group-item:not(:last-child) {
+			padding: 4% 0;
 		}
 
 		#updates {
@@ -178,11 +189,14 @@
 				border-left: 0;
 				border-right: 0;
 				border-top: 0;
+				margin-bottom: 1px;
+				border-radius: 0;
 			}
 
 			li.list-group-item {
 				border-bottom: 1px solid darkgray !important;
 			}
+			li:last-child { border: 0 !important; }
 
 			.title {
 				margin-bottom: 20px;
@@ -196,6 +210,9 @@
 			.circle {
 				border-radius: 50%;
 				padding: 16px;
+				width: 50px;
+    			height: 50px;
+    			margin: 14px auto;
 			}
 
 			li {
@@ -205,6 +222,34 @@
 			.title {
 				margin: 10px 0px 22px;
 			}
+
+			.action-button { margin-top: 9%;
+				button { max-width: 300px; }
+			}
+		}
+	}
+}
+
+@media (max-width: 692px) {
+	.admin.hasala .hasala-description .header .edit-icon {
+		top: 40px;
+	}
+}
+
+@media (max-width: 1320px) {
+	.admin.hasala .hasala-milestones {
+		#updates, #milestones {
+			.col-md-1, .col-md-3, .col-md-5, .col-md-6 {
+				width: 100%;
+			}
+
+			li * { 
+				text-align: center; 
+
+				.title { margin-top: 25px; }
+			}
+
+			.action-button, .target { margin-top: 2%; }
 		}
 	}
 }
